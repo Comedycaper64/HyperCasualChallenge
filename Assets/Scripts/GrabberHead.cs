@@ -7,6 +7,11 @@ public class GrabberHead : MonoBehaviour
     private ColourType colourType;
     [SerializeField] private Collider2D headCollider;
 
+    private void Awake() 
+    {
+        ToggleCollider(false);    
+    }
+
     private void OnTriggerEnter2D(Collider2D other) 
     {
         if (other.GetComponent<Rigidbody2D>())
@@ -19,7 +24,7 @@ public class GrabberHead : MonoBehaviour
                 scoreToAdd *= 2;
             }
             ScoreManager.Instance.AddToScore(scoreToAdd);
-            ScoreManager.Instance.SpawnTransientText(other.transform.position, scoreToAdd.ToString());
+            ScoreManager.Instance.SpawnTransientText(other.transform.position, scoreToAdd.ToString(), true);
         }   
     }
 

@@ -18,6 +18,11 @@ public class TransientText : MonoBehaviour
         scoreText.text = text;
     }
 
+    public void SetColour(Color color)
+    {
+        scoreText.color = color;
+    }
+
     private void Update() 
     {
         transform.Translate(Vector3.up * Time.deltaTime);

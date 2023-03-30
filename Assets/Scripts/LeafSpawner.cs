@@ -6,7 +6,7 @@ public class LeafSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject[] leafs;
     private int spawnedLeafs = 0;
-    private List<GameObject> leafSpool = new List<GameObject>();
+    public List<GameObject> leafSpool = new List<GameObject>();
     [SerializeField] private int leafLimit;
     [SerializeField] private float timeBetweenSpawnsMin;
     [SerializeField] private float timeBetweenSpawnsMax;

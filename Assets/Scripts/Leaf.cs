@@ -51,6 +51,11 @@ public class Leaf : MonoBehaviour
         return colourType;
     }
 
+    public Transform GetSpriteTransform()
+    {
+        return leafSprite.transform;
+    }
+
     public void ResetLeaf()
     {
         leafSprite.transform.position = transform.position;
