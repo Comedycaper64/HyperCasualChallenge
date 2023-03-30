@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Leaf : MonoBehaviour
 {
+    [SerializeField] private ColourType colourType;
+    [SerializeField] private int leafScore;
     [SerializeField] private GameObject leafSprite;
     [SerializeField] private float minAngleSwing;
     [SerializeField] private float maxAngleSwing;
@@ -39,9 +41,14 @@ public class Leaf : MonoBehaviour
         }
     }
 
-    public void SetLeafType()
+    public int GetLeafScore()
     {
-        
+        return leafScore;
+    }
+
+    public ColourType GetLeafColour()
+    {
+        return colourType;
     }
 
     public void ResetLeaf()
@@ -49,5 +56,6 @@ public class Leaf : MonoBehaviour
         leafSprite.transform.position = transform.position;
         leafSprite.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         targetAngle = new Quaternion();
+        targetAngle = GetTargetAngle();
     }
 }

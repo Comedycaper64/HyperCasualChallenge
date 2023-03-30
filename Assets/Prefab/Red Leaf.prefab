@@ -75,8 +75,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 248a904829d4794479602ec08639e48c, type: 3}
-  m_Color: {r: 1, g: 0.47529262, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 7b79135e7e28ac242988ec41bdc7c61a, type: 3}
+  m_Color: {r: 0.8018868, g: 0.04391732, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -144,7 +144,7 @@ GameObject:
   - component: {fileID: 5979924167736627816}
   - component: {fileID: 5979924167736627815}
   m_Layer: 0
-  m_Name: Leaf
+  m_Name: Red Leaf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -164,7 +164,7 @@ Transform:
   m_Children:
   - {fileID: 5979924166699815495}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5979924167736627815
 MonoBehaviour:
@@ -178,8 +178,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c749c7676dede24b9ec5cfbb7d7e568, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colourType: 0
+  leafScore: 15
   leafSprite: {fileID: 5979924166699815496}
-  minAngleSwing: 10
-  maxAngleSwing: 30
+  minAngleSwing: 20
+  maxAngleSwing: 50
   angleSwingSpeed: 2
   leafSpinSpeed: 40

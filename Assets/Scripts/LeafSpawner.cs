@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LeafSpawner : MonoBehaviour
 {
-    [SerializeField] private GameObject leaf;
+    [SerializeField] private GameObject[] leafs;
     private int spawnedLeafs = 0;
     private List<GameObject> leafSpool = new List<GameObject>();
     [SerializeField] private int leafLimit;
@@ -13,7 +13,7 @@ public class LeafSpawner : MonoBehaviour
     [SerializeField] private Transform leafSpawnMin;
     [SerializeField] private Transform leafSpawnMax;
 
-    private void Awake() 
+    public void StartLeafSpawn()
     {
         StartCoroutine(SpawnLeaf());
     }
@@ -24,6 +24,7 @@ public class LeafSpawner : MonoBehaviour
         //If not enough leaves in scene, instantiate a new one. Else find a disabled one and transport it to the top of the screen
         if (spawnedLeafs < leafLimit)
         {
+            GameObject leaf = leafs[Random.Range(0, leafs.Length)];
             availableLeaf = Instantiate(leaf, new Vector3(Random.Range(leafSpawnMin.position.x, leafSpawnMax.position.x), leafSpawnMin.position.y, leafSpawnMin.position.z), Quaternion.identity);
             leafSpool.Add(availableLeaf);
             spawnedLeafs++;
